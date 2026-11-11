@@ -44,13 +44,14 @@ footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--line);font-size
 <div class="wrap">
 <p class="kicker">8660 De Panne · Adinkerke</p>
 <h1>Lokaal genieten</h1>
-<p class="lede">Premium overzicht van lokale zaken. Bel, WhatsApp, navigeer of bekijk reviews — alles in één klik. Geen doorverwijzingen.</p>
+<p class="lede">Premium overzicht van lokale zaken, slapen en shoppen. Bel, WhatsApp, navigeer of bekijk reviews — alles in één klik.</p>
 
 <input type="search" class="search" id="q" placeholder="Zoek op naam of straat...">
 <div class="filters">
 <button class="chip on" data-f="all">Alle</button>
 <button class="chip" data-f="horeca">Horeca</button>
-<button class="chip" data-f="shop">Shop</button>
+<button class="chip" data-f="slapen">Slapen</button>
+<button class="chip" data-f="shop">Shoppen</button>
 <button class="chip" data-f="dienst">Diensten</button>
 </div>
 
@@ -60,25 +61,44 @@ footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--line);font-size
 </div>
 <script>
 const places = [
+  // Horeca (bestaand)
   {name:"'t Pannepotje", cat:"horeca", addr:"Kerkstraat 47, 8660 De Panne", phone:"+3258410160", web:"http://tpannepotje.be", wa:true},
   {name:"'t Zeiltje", cat:"horeca", addr:"Markt 2, 8660 De Panne", phone:"+3258410427", wa:true},
   {name:"'t Zonneke", cat:"horeca", addr:"Zeelaan 81, 8660 De Panne", phone:"+3258415797", wa:true},
   {name:"Agora", cat:"horeca", addr:"Markt 20, 8660 De Panne", phone:"+32476028347", wa:true},
   {name:"Albert 1", cat:"horeca", addr:"Zeedijk 2, 8660 De Panne", phone:"+3258413708", web:"https://www.resto-dp.be"},
-  {name:"Amuni", cat:"horeca", addr:"Duinkerkelaan 24, 8660 De Panne", phone:"+32497601254", wa:true},
   {name:"Armalot by Julia", cat:"horeca", addr:"Ernest d'Arripelaan 13, 8660 De Panne", phone:"+3258625862", web:"https://www.armalot.be/"},
-  {name:"Au Val d'Or", cat:"horeca", addr:"Duinhoekstraat 178, 8660 De Panne", phone:"+3258410468"},
-  {name:"Aux Oliviers", cat:"horeca", addr:"Nieuwpoortlaan 56, 8660 De Panne", phone:"+32493589244", wa:true},
-  {name:"Bistrot Merlot", cat:"horeca", addr:"Nieuwpoortlaan 70, 8660 De Panne", phone:"+3258414061"},
-  {name:"Bar Fino", cat:"horeca", addr:"Zeelaan 76, 8660 De Panne", web:"https://barfino.be/"},
   {name:"Petit Comité", cat:"horeca", addr:"Veurnestraat 53, 8660 De Panne", phone:"+32499741069", web:"https://petitcomité.be", wa:true},
   {name:"Robinson De Panne", cat:"horeca", addr:"Zeelaan 169, 8660 De Panne", phone:"+3258595065", web:"https://www.robinsondepanne.be/"},
-  {name:"Parkhotel", cat:"horeca", addr:"Albert Dumontlaan 30, 8660 De Panne", phone:"+3258414141", web:"https://www.parkhoteldepanne.be"},
   {name:"Frituur Cono", cat:"horeca", addr:"Zeelaan 57, 8660 De Panne", phone:"+3258593978", web:"https://frituurcono.be/"},
+
+  // Slapen / Hotels & B&B
+  {name:"Plopsa Hotel", cat:"slapen", addr:"De Pannelaan 68, 8660 De Panne", phone:"+3258410000", web:"https://www.plopsahotel.be"},
+  {name:"Parkhotel", cat:"slapen", addr:"Albert Dumontlaan 30, 8660 De Panne", phone:"+3258414141", web:"https://www.parkhoteldepanne.be"},
+  {name:"ibis de Panne", cat:"slapen", addr:"Zeelaan 2, 8660 De Panne", phone:"+3258429080", web:"https://ibisdepanne.be/"},
+  {name:"Hotel Villa Select", cat:"slapen", addr:"Walckierstraat 7, 8660 De Panne", phone:"+3258429900", web:"https://www.hotelvillaselect.be"},
+  {name:"Hotel Royal", cat:"slapen", addr:"Zeelaan 180, 8660 De Panne", phone:"+3258411116", web:"https://www.hotel-royal.be"},
+  {name:"Hotel Montana", cat:"slapen", addr:"Leopold II Laan 11, 8660 De Panne", phone:"+3258411829", web:"https://hotelmontana.be/nl/"},
+  {name:"Hotel Ambassador", cat:"slapen", addr:"Duinkerkelaan 43, 8660 De Panne", phone:"+3258411612", web:"https://www.hotel-ambassador.be"},
+  {name:"Hotel Donny", cat:"slapen", addr:"Donnylaan 17, 8660 De Panne", phone:"+3258421000", web:"https://www.hoteldonny.com"},
+  {name:"B&B Villa Bon Papa", cat:"slapen", addr:"A. Dumontlaan 5, 8660 De Panne", phone:"+32487100621", web:"https://www.villabonpapa.be/", wa:true},
+  {name:"B&B 't Zeetje", cat:"slapen", addr:"Kasteelstraat 35, 8660 De Panne", phone:"+32472312488", web:"https://www.tzeetje-guesthouse.com/", wa:true},
+  {name:"B&B Esprit de Mer", cat:"slapen", addr:"Visserslaan 10, 8660 De Panne", phone:"+32474329121", web:"http://espritdemer.be/", wa:true},
+  {name:"B&B Charles Cabour", cat:"slapen", addr:"De Pannelaan 8, 8660 De Panne", phone:"+32475805080", web:"https://www.charlescabour.com/", wa:true},
+
+  // Shoppen
   {name:"Vishandel Zeezot", cat:"shop", addr:"Sloepenlaan 16, 8660 De Panne", phone:"+3258415700", web:"www.zeezot.be"},
   {name:"Slagerij Kurt & Katleen", cat:"shop", addr:"Markt 1, 8660 De Panne", phone:"+3258411309"},
   {name:"Proxy Delhaize", cat:"shop", addr:"Zeelaan 116, 8660 De Panne", phone:"+3258420230"},
+  {name:"Carrefour Market", cat:"shop", addr:"Zeelaan 114, 8660 De Panne", phone:"+3258413133"},
   {name:"Absolutely Golf & Fashion", cat:"shop", addr:"De Pannelaan 85, 8660 De Panne", phone:"+3258420975", web:"https://www.absolutelygolf.be"},
+  {name:"Superdry", cat:"shop", addr:"Zeelaan 192, 8660 De Panne", phone:"+3258698777"},
+  {name:"Zeeman", cat:"shop", addr:"Zeelaan 108, 8660 De Panne", phone:"+3258680188", web:"www.zeeman.com"},
+  {name:"Toyland", cat:"shop", addr:"Zeelaan 121, 8660 De Panne", phone:"+3258411385", web:"www.toyland.be"},
+  {name:"Hema", cat:"shop", addr:"Zeelaan 140, 8660 De Panne", phone:"+3258429000"},
+  {name:"Kruidvat", cat:"shop", addr:"Zeelaan 98, 8660 De Panne"},
+
+  // Diensten
   {name:"Agence Driemo", cat:"dienst", addr:"Zeedijk 27, 8660 De Panne", phone:"+3258415136", web:"https://www.agencedriemo.be"},
   {name:"Advocaat Nicolas Vanspeybrouck", cat:"dienst", addr:"Markt 10, 8660 De Panne", phone:"+3258411620", web:"https://www.nicolas-vanspeybrouck.be"}
 ];
