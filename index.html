@@ -2,25 +2,40 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#53C2EC">
-<title>8660 LOKAAL</title>
+<title>8660 LOKAAL · Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#EEF8FB;--surface:#fff;--ink:#18182E;--muted:#5B5B72;--line:#D3E5EB;--sea:#0F7FAA;--blue:#53C2EC;--dune:#E9C46A;--display:"Barlow Condensed",sans-serif;--body:"Lexend",sans-serif;--mono:"JetBrains Mono",monospace;--radius:14px}
-@media (prefers-color-scheme:dark){:root{--bg:#100F24;--surface:#1A1937;--ink:#EEF8FB;--muted:#A9AFC8;--line:#2E2D57}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+:root{--bg:#EEF8FB;--surface:#fff;--surface-2:#DDEFF5;--ink:#18182E;--muted:#5B5B72;--line:#D3E5EB;--sea:#0F7FAA;--blue:#53C2EC;--dune:#E9C46A;--ok:#2E8A5C;--display:"Barlow Condensed",sans-serif;--body:"Lexend",sans-serif;--mono:"JetBrains Mono",monospace;--radius:14px;--shadow:0 1px 2px rgba(15,42,51,.06),0 8px 24px rgba(15,42,51,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#100F24;--surface:#1A1937;--surface-2:#232247;--ink:#EEF8FB;--muted:#A9AFC8;--line:#2E2D57}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
 .wrap{max-width:1100px;margin:0 auto;padding:16px}
-.nav{position:sticky;top:0;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);border-bottom:3px solid var(--blue);z-index:40}
+.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);border-bottom:3px solid var(--blue)}
 .nav .wrap{display:flex;align-items:center;height:60px}
 .brand{font-family:var(--display);font-weight:900;font-size:1.45rem;text-decoration:none;color:var(--ink)}
 .kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea);font-weight:600}
 h1,h2{font-family:var(--display);text-transform:uppercase;font-weight:800;margin:0}
-h1{font-size:clamp(2.6rem,7vw,4.2rem)}
+h1{font-size:clamp(2.4rem,7vw,3.8rem)}
 .lede{color:var(--muted);max-width:62ch}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-.card h3{font-family:var(--display);font-size:1.3rem;margin:0 0 6px}
+.search{width:100%;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:1rem var(--body);margin:16px 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font:600 .8rem var(--body);cursor:pointer}
+.chip.on{background:var(--ink);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border-top:4px solid var(--blue)}
+.card-body{padding:16px}
+.card h3{font-family:var(--display);font-size:1.4rem;margin:0 0 4px}
+.addr{font-size:.9rem;color:var(--muted);margin-bottom:12px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:10px;border:none;font:600 .85rem var(--body);cursor:pointer;text-decoration:none;color:#fff}
+.btn-call{background:#2E8A5C}
+.btn-wa{background:#25D366}
+.btn-nav{background:var(--sea)}
+.btn-rev{background:#FBBC05;color:#16152C}
+.btn-web{background:var(--blue);color:#16152C}
+.badge{display:inline-block;font:600 .65rem var(--mono);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 8px;background:var(--dune);color:#16152C;margin-right:4px}
 footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
 </style>
 </head>
@@ -29,16 +44,84 @@ footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--line);font-size
 <div class="wrap">
 <p class="kicker">8660 De Panne · Adinkerke</p>
 <h1>Lokaal genieten</h1>
-<p class="lede">Eten, slapen, shoppen en lokale diensten. Alles in het kleine hoekje.</p>
+<p class="lede">Premium overzicht van lokale zaken. Bel, WhatsApp, navigeer of bekijk reviews — alles in één klik. Geen doorverwijzingen.</p>
 
-<div class="grid">
-<div class="card"><h3>Eten & drinken</h3><p>Horeca aan de Zeedijk, Zeelaan en in Adinkerke. Van brasserie tot gastronomie.</p><a href="https://www.depanne.be/nl/verblijf-in-de-panne/eten-drinken/alle-horecazaken-op-een-rijtje" target="_blank">Alle horecazaken →</a></div>
-<div class="card"><h3>Slapen</h3><p>Hotels, B&B en appartementen met zicht op zee of in de duinen.</p><a href="https://www.depanne.be/nl/lokaal" target="_blank">Verblijf in De Panne →</a></div>
-<div class="card"><h3>Shoppen</h3><p>Zeelaan is dé winkelstraat. Ook in Adinkerke en op zondag open.</p><a href="https://www.depanne.be/nl/alle-zaken-op-een-rijtje" target="_blank">Alle lokale zaken →</a></div>
-<div class="card"><h3>Diensten</h3><p>Van bakker tot bouw, kapsalon tot professional services.</p></div>
+<input type="search" class="search" id="q" placeholder="Zoek op naam of straat...">
+<div class="filters">
+<button class="chip on" data-f="all">Alle</button>
+<button class="chip" data-f="horeca">Horeca</button>
+<button class="chip" data-f="shop">Shop</button>
+<button class="chip" data-f="dienst">Diensten</button>
 </div>
 
-<footer><p>8660 LOKAAL · Gemaakt in 8660. Bron: gemeente De Panne. <a href="https://8660-dashboard.vercel.app">Dashboard</a></p></footer>
+<div class="grid" id="list"></div>
+
+<footer><p>8660 LOKAAL · Premium weergave. Bron: gemeente De Panne + publieke gegevens. <a href="https://8660-dashboard.vercel.app">Dashboard</a></p></footer>
 </div>
+<script>
+const places = [
+  {name:"'t Pannepotje", cat:"horeca", addr:"Kerkstraat 47, 8660 De Panne", phone:"+3258410160", web:"http://tpannepotje.be", wa:true},
+  {name:"'t Zeiltje", cat:"horeca", addr:"Markt 2, 8660 De Panne", phone:"+3258410427", wa:true},
+  {name:"'t Zonneke", cat:"horeca", addr:"Zeelaan 81, 8660 De Panne", phone:"+3258415797", wa:true},
+  {name:"Agora", cat:"horeca", addr:"Markt 20, 8660 De Panne", phone:"+32476028347", wa:true},
+  {name:"Albert 1", cat:"horeca", addr:"Zeedijk 2, 8660 De Panne", phone:"+3258413708", web:"https://www.resto-dp.be"},
+  {name:"Amuni", cat:"horeca", addr:"Duinkerkelaan 24, 8660 De Panne", phone:"+32497601254", wa:true},
+  {name:"Armalot by Julia", cat:"horeca", addr:"Ernest d'Arripelaan 13, 8660 De Panne", phone:"+3258625862", web:"https://www.armalot.be/"},
+  {name:"Au Val d'Or", cat:"horeca", addr:"Duinhoekstraat 178, 8660 De Panne", phone:"+3258410468"},
+  {name:"Aux Oliviers", cat:"horeca", addr:"Nieuwpoortlaan 56, 8660 De Panne", phone:"+32493589244", wa:true},
+  {name:"Bistrot Merlot", cat:"horeca", addr:"Nieuwpoortlaan 70, 8660 De Panne", phone:"+3258414061"},
+  {name:"Bar Fino", cat:"horeca", addr:"Zeelaan 76, 8660 De Panne", web:"https://barfino.be/"},
+  {name:"Petit Comité", cat:"horeca", addr:"Veurnestraat 53, 8660 De Panne", phone:"+32499741069", web:"https://petitcomité.be", wa:true},
+  {name:"Robinson De Panne", cat:"horeca", addr:"Zeelaan 169, 8660 De Panne", phone:"+3258595065", web:"https://www.robinsondepanne.be/"},
+  {name:"Parkhotel", cat:"horeca", addr:"Albert Dumontlaan 30, 8660 De Panne", phone:"+3258414141", web:"https://www.parkhoteldepanne.be"},
+  {name:"Frituur Cono", cat:"horeca", addr:"Zeelaan 57, 8660 De Panne", phone:"+3258593978", web:"https://frituurcono.be/"},
+  {name:"Vishandel Zeezot", cat:"shop", addr:"Sloepenlaan 16, 8660 De Panne", phone:"+3258415700", web:"www.zeezot.be"},
+  {name:"Slagerij Kurt & Katleen", cat:"shop", addr:"Markt 1, 8660 De Panne", phone:"+3258411309"},
+  {name:"Proxy Delhaize", cat:"shop", addr:"Zeelaan 116, 8660 De Panne", phone:"+3258420230"},
+  {name:"Absolutely Golf & Fashion", cat:"shop", addr:"De Pannelaan 85, 8660 De Panne", phone:"+3258420975", web:"https://www.absolutelygolf.be"},
+  {name:"Agence Driemo", cat:"dienst", addr:"Zeedijk 27, 8660 De Panne", phone:"+3258415136", web:"https://www.agencedriemo.be"},
+  {name:"Advocaat Nicolas Vanspeybrouck", cat:"dienst", addr:"Markt 10, 8660 De Panne", phone:"+3258411620", web:"https://www.nicolas-vanspeybrouck.be"}
+];
+
+function mapsUrl(addr){return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr)}`;}
+function reviewUrl(name,addr){return `https://www.google.com/search?q=${encodeURIComponent(name+' '+addr+' reviews')}`;}
+function waUrl(phone){const p=phone.replace(/\D/g,'');return `https://wa.me/${p.startsWith('32')?p:'32'+p.slice(1)}`;}
+
+function render(filter="all", q=""){
+  const el=document.getElementById("list");
+  el.innerHTML="";
+  places.filter(p=>{
+    const matchF=filter==="all"||p.cat===filter;
+    const matchQ=!q|| (p.name+p.addr).toLowerCase().includes(q.toLowerCase());
+    return matchF && matchQ;
+  }).forEach(p=>{
+    const card=document.createElement("div");
+    card.className="card";
+    const actions=[];
+    if(p.phone){
+      actions.push(`<a class="btn btn-call" href="tel:${p.phone}">📞 Bel</a>`);
+      if(p.wa) actions.push(`<a class="btn btn-wa" href="${waUrl(p.phone)}" target="_blank">💬 WhatsApp</a>`);
+    }
+    actions.push(`<a class="btn btn-nav" href="${mapsUrl(p.addr)}" target="_blank">🚗 Route</a>`);
+    actions.push(`<a class="btn btn-rev" href="${reviewUrl(p.name,p.addr)}" target="_blank">⭐ Reviews</a>`);
+    if(p.web) actions.push(`<a class="btn btn-web" href="${p.web.startsWith('http')?p.web:'https://'+p.web}" target="_blank">Website</a>`);
+    card.innerHTML=`<div class="card-body">
+      <span class="badge">${p.cat}</span>
+      <h3>${p.name}</h3>
+      <div class="addr">${p.addr}</div>
+      <div class="actions">${actions.join("")}</div>
+    </div>`;
+    el.appendChild(card);
+  });
+}
+render();
+
+document.getElementById("q").oninput=e=>render(document.querySelector(".chip.on").dataset.f, e.target.value);
+document.querySelectorAll(".chip").forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+  render(btn.dataset.f, document.getElementById("q").value);
+});
+</script>
 </body>
 </html>
