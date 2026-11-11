@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#53C2EC">
+<title>8660 LOKAAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lexend:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF8FB;--surface:#fff;--ink:#18182E;--muted:#5B5B72;--line:#D3E5EB;--sea:#0F7FAA;--blue:#53C2EC;--dune:#E9C46A;--display:"Barlow Condensed",sans-serif;--body:"Lexend",sans-serif;--mono:"JetBrains Mono",monospace;--radius:14px}
+@media (prefers-color-scheme:dark){:root{--bg:#100F24;--surface:#1A1937;--ink:#EEF8FB;--muted:#A9AFC8;--line:#2E2D57}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+.nav{position:sticky;top:0;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);border-bottom:3px solid var(--blue);z-index:40}
+.nav .wrap{display:flex;align-items:center;height:60px}
+.brand{font-family:var(--display);font-weight:900;font-size:1.45rem;text-decoration:none;color:var(--ink)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sea);font-weight:600}
+h1,h2{font-family:var(--display);text-transform:uppercase;font-weight:800;margin:0}
+h1{font-size:clamp(2.6rem,7vw,4.2rem)}
+.lede{color:var(--muted);max-width:62ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card h3{font-family:var(--display);font-size:1.3rem;margin:0 0 6px}
+footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap"><a class="brand" href="/">8660 LOKAAL</a></div></nav>
+<div class="wrap">
+<p class="kicker">8660 De Panne · Adinkerke</p>
+<h1>Lokaal genieten</h1>
+<p class="lede">Eten, slapen, shoppen en lokale diensten. Alles in het kleine hoekje.</p>
+
+<div class="grid">
+<div class="card"><h3>Eten & drinken</h3><p>Horeca aan de Zeedijk, Zeelaan en in Adinkerke. Van brasserie tot gastronomie.</p><a href="https://www.depanne.be/nl/verblijf-in-de-panne/eten-drinken/alle-horecazaken-op-een-rijtje" target="_blank">Alle horecazaken →</a></div>
+<div class="card"><h3>Slapen</h3><p>Hotels, B&B en appartementen met zicht op zee of in de duinen.</p><a href="https://www.depanne.be/nl/lokaal" target="_blank">Verblijf in De Panne →</a></div>
+<div class="card"><h3>Shoppen</h3><p>Zeelaan is dé winkelstraat. Ook in Adinkerke en op zondag open.</p><a href="https://www.depanne.be/nl/alle-zaken-op-een-rijtje" target="_blank">Alle lokale zaken →</a></div>
+<div class="card"><h3>Diensten</h3><p>Van bakker tot bouw, kapsalon tot professional services.</p></div>
+</div>
+
+<footer><p>8660 LOKAAL · Gemaakt in 8660. Bron: gemeente De Panne. <a href="https://8660-dashboard.vercel.app">Dashboard</a></p></footer>
+</div>
+</body>
+</html>
